@@ -22,34 +22,23 @@ const FOOTPRINT_CONFIG = {
     const token = canvas.tokens.get(tokenDoc.id);
     if (!token || token.document.hidden) return;
     if ((token.document.elevation ?? 0) > 0) return;
-  
-    const startX = tokenDoc.x;
-    const startY = tokenDoc.y;
-    const endX = updateData.x ?? startX;
-    const endY = updateData.y ?? startY;
-  
-    const gridSize = canvas.grid.size;
-    const dx = endX - startX;
-    const dy = endY - startY;
-    const dist = Math.hypot(dx, dy);
-    const steps = Math.ceil(dist / gridSize);
-  
+
+    waypoints = tokenDoc.movement.passed.waypoints;
+
     const footprintTiles = [];
-  
-    for (let i = 0; i < steps; i++) {
-      const t = i / steps;
-      const interpX = startX + dx * t;
-      const interpY = startY + dy * t;
-      const { x, y } = snapToGridCenter(interpX, interpY);
-  
-      // Impede criação duplicada
+    for (const wp of waypoints) {
+      // Snap to grid center
+      const x = Math.floor(wp.x / canvas.grid.size) * canvas.grid.size;
+      const y = Math.floor(wp.y / canvas.grid.size) * canvas.grid.size;
+
+      // Avoid duplicate footprints at the same position
       const alreadyExists = canvas.tiles.placeables.some(t =>
         t.document.flags?.footsteps?.isFootprint &&
         t.document.x === x &&
         t.document.y === y
       );
       if (alreadyExists) continue;
-  
+
       footprintTiles.push({
         texture: { src: FOOTPRINT_CONFIG.image },
         width: gridSize * FOOTPRINT_CONFIG.size,
@@ -70,9 +59,9 @@ const FOOTPRINT_CONFIG = {
         }
       });
     }
-  
+
     const created = await canvas.scene.createEmbeddedDocuments("Tile", footprintTiles);
-  
+
     // === FADE AUTOMÁTICO FORA DE COMBATE ===
     if (!game.combat?.started) {
       for (const tile of created) {
