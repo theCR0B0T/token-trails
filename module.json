@@ -11,6 +11,6 @@
   "scripts": [],
   "flags": {},
   "url": "https://github.com/yourname/footsteps",
-  "manifest": "https://yourhost.com/footsteps/module.json",
-  "download": "https://yourhost.com/footsteps/footsteps.zip"
+  "manifest": "https://github.com/theCR0B0T/token-trails/blob/main/module.json",
+  "download": "https://github.com/theCR0B0T/token-trails/blob/main/module.zip"
 }
