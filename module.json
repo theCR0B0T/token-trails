@@ -12,6 +12,7 @@
   "esmodules": [
     "scripts/main.js"
   ],
+  "url": "https://github.com/theCR0B0T/token-trails",
   "manifest": "https://github.com/theCR0B0T/token-trails/blob/main/module.json",
   "download": "https://github.com/theCR0B0T/token-trails/blob/main/module.zip",
   "compatibility": {
