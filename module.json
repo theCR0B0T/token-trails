@@ -1,16 +1,21 @@
 {
-  "name": "footsteps",
-  "title": "Footsteps",
-  "description": "Draws footprint tiles as tokens move.",
-  "version": "1.0.0",
-  "minimumCoreVersion": "0.13.0",
-  "compatibleCoreVersion": "0.13.999",
-  "author": "Your Name",
-  "esmodules": ["scripts/footsteps.js"],
-  "styles": ["styles/footsteps.css"],
-  "scripts": [],
-  "flags": {},
-  "url": "https://github.com/yourname/footsteps",
+  "id": "token-trails",
+  "title": "Token Trails",
+  "description": "A Foundry VTT module that leaves visual trails like footprints behind moving tokens.",
+  "version": "0.1",
+  "authors": [
+    {
+      "name": "CR0B0T",
+      "email": "caio4arp10@gmail.com"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
   "manifest": "https://github.com/theCR0B0T/token-trails/blob/main/module.json",
-  "download": "https://github.com/theCR0B0T/token-trails/blob/main/module.zip"
+  "download": "https://github.com/theCR0B0T/token-trails/blob/main/module.zip",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  }
 }
