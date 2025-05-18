@@ -23,7 +23,7 @@ const FOOTPRINT_CONFIG = {
     if (!token || token.document.hidden) return;
     if ((token.document.elevation ?? 0) > 0) return;
 
-    waypoints = tokenDoc.movement.passed.waypoints;
+    const waypoints = tokenDoc.movement.passed.waypoints;
     const gridSize = canvas.grid.size;
 
     const footprintTiles = [];
