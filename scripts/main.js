@@ -23,11 +23,18 @@ const FOOTPRINT_CONFIG = {
     if (!token || token.document.hidden) return;
     if ((token.document.elevation ?? 0) > 0) return;
 
+    const startX = tokenDoc.x;
+    const startY = tokenDoc.y;
     const waypoints = tokenDoc.movement.passed.waypoints;
+    const fullPath = [
+      { x: startX, y: startY },
+      ...waypoints
+    ];
+    
     const gridSize = canvas.grid.size;
 
     const footprintTiles = [];
-    for (const wp of waypoints) {
+    for (const wp of fullPath) {
       // Snap to grid center
       const x = Math.floor(wp.x / canvas.grid.size) * canvas.grid.size;
       const y = Math.floor(wp.y / canvas.grid.size) * canvas.grid.size;
