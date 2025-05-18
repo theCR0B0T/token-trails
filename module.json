@@ -3,12 +3,7 @@
   "title": "Token Trails",
   "description": "A Foundry VTT module that leaves visual trails like footprints behind moving tokens.",
   "version": "0.1",
-  "authors": [
-    {
-      "name": "CR0B0T",
-      "email": "caio4arp10@gmail.com"
-    }
-  ],
+  "author": "CR0B0T",
   "esmodules": [
     "scripts/main.js"
   ],
