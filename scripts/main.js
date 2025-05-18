@@ -24,6 +24,7 @@ const FOOTPRINT_CONFIG = {
     if ((token.document.elevation ?? 0) > 0) return;
 
     waypoints = tokenDoc.movement.passed.waypoints;
+    const gridSize = canvas.grid.size;
 
     const footprintTiles = [];
     for (const wp of waypoints) {
