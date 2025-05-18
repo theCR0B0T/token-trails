@@ -1,0 +1,16 @@
+{
+  "name": "footsteps",
+  "title": "Footsteps",
+  "description": "Draws footprint tiles as tokens move.",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.13.0",
+  "compatibleCoreVersion": "0.13.999",
+  "author": "Your Name",
+  "esmodules": ["scripts/footsteps.js"],
+  "styles": ["styles/footsteps.css"],
+  "scripts": [],
+  "flags": {},
+  "url": "https://github.com/yourname/footsteps",
+  "manifest": "https://yourhost.com/footsteps/module.json",
+  "download": "https://yourhost.com/footsteps/footsteps.zip"
+}
