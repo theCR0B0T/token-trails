@@ -2,7 +2,7 @@
   "id": "token-trails",
   "title": "Token Trails",
   "description": "A Foundry VTT module that leaves visual trails like footprints behind moving tokens.",
-  "version": "0.1",
+  "version": "0.2",
   "author": "CR0B0T",
   "esmodules": [
     "scripts/main.js"

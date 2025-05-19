@@ -21,6 +21,7 @@ const FOOTPRINT_CONFIG = {
   
     const token = canvas.tokens.get(tokenDoc.id);
     if (!token || token.document.hidden) return;
+    if (token.document.movementAction != "walk") return;
     if ((token.document.elevation ?? 0) > 0) return;
 
     const startX = tokenDoc.x;
